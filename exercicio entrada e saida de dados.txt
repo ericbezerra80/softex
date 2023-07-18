@@ -1,0 +1,70 @@
+Elabore um algoritmo que representa um cadastro. Ele deve ler os seguintes dados fornecidos pelo usuário:
+
+- Nome
+- Endereço
+- Cidade
+- CPF
+- RG
+- Idade
+- Nome do pai
+- Nome da mãe
+- Peso
+- Renda bruta
+
+Apresente as informações solicitadas no final do cadastro.
+
+Realize essa atividade no WORD ou no Bloco de Notas, suba esse arquivo em um drive com link público e compartilhe o link no campo ao lado para que outros desenvolvedores possam analisá-lo.
+
+---------------------------------------------------------------
+
+var
+nome, endereco, cidade, pai, mae: caractere
+cpf, rg, idade: inteiro
+Peso, renda: real
+
+inicio
+
+	escreva ("CADASTRO")
+	escreva ("digite seu nome");
+	leia (nome)
+
+	escreva ("digite seu endereco");
+	leia (endereco)
+
+	escreva ("digite sua cidade");
+	leia (cidade)
+
+	escreva ("digite seu cpf");
+	leia (cpf)
+
+	escreva ("digite seu rg");
+	leia (rg)
+
+	escreva ("digite sua idade");
+	leia (idade)
+
+	escreva ("digite o nome do seu pai");
+	leia (pai)
+
+	escreva ("digite o nome de sua mae");
+	leia (mae)
+
+	escreva ("digite seu peso");
+	leia (peso)
+
+	escreva ("digite sua renda bruta");
+	leia (renda)
+
+// Apresentar as informações cadastrais
+escreva ("O seu nome é:" , nome);
+escreva ("O seu endereço é:" , endereco);
+escreva ("A sua cidade é:" , cidade);
+escreva ("O seu CPF é:" , cpf);
+escreva ("O seu RG é:" , rg);
+escreva ("A sua idade é:" , idade);
+escreva ("Nome do pai é:" , pai);
+escreva ("Nome da mae é:" , mae);
+escreva ("O seu Peso é:" , peso);
+escreva ("A sua Renda Bruta é:" , renda);
+
+fimalgoritimo
