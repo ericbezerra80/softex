@@ -75,5 +75,19 @@ var idadeMaeNasc = parseInt(idadeMae) - parseInt(idade);
 var idadePaiNasc = parseInt(idadePai) - parseInt(idade);
 
 alert(nome + ' quando você nasceu, Dona ' + nomeMae + ' tinha ' + idadeMaeNasc + ' anos e seu ' + nomePai + ' Tinha ' + idadePaiNasc + ' anos');
-
 -------------------------------------------------------------
+
+6- Faça um programa que leia as três notas do aluno e calcula a sua média e a sua situação
+(aprovado por média, prova final ou reprovado direto). A média é calculada da seguinte
+forma: descarta a menor nota e a média é calculada usando as duas maiores notas. A situação
+do aluno depende da sua média e é apresentada na tabela abaixo:
+
+--------------------------------------------
+|SITUAÇÃO            | MÉDIA               |
+|------------------------------------------|
+|APROVADO POR MÉDIA  | MÉDIA >= 7.0        |
+|------------------------------------------|
+|PROVA FINAL         | 3.0 <= MÉDIA < 7.0  |
+|------------------------------------------|
+|REPROVADO DIRETO    | MÁDIA < 3.0         |
+--------------------------------------------
