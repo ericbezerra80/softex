@@ -1,0 +1,79 @@
+LISTA DE EXERCÍCIOS
+
+1- Faça um algoritmo que solicite do usuário três valores e calcule a média das notas de um
+aluno;
+
+RESPOSTA
+
+var nota1 = prompt('Digite a nota da 1ª Unidade');
+var nota2 = prompt('Digite a nota da 2ª unidade');
+var nota3 = prompt('Digite a nota da 3ª unidade');
+var media = (parseInt(nota1) + parseInt(nota2) + parseInt(nota3)) /3;
+
+alert('O Aluna Obteve a média de: ' + media)
+------------------------------------------------------------------
+
+2- Faça um algoritmo para que solicite o nome do usuário, a nota dele em duas avaliações e
+imprima o nome dele junto com a média de suas notas;
+
+RESPOSTA
+
+var nome = prompt('Digite Seu Nome');
+var nota1 = prompt('Digite a nota da 1ª Unidade');
+var nota2 = prompt('Digite a nota da 2ª unidade');
+var media = (parseInt(nota1) + parseInt(nota2)) /2;
+
+alert(nome + ' Obteve a média de: ' + media)
+-----------------------------------------------------------------
+
+3- Uma empresa vai dar um aumento de salário ao seu funcionário. Faça um programa para ler o
+salário do funcionário e o percentual de reajuste. Calcular e escrever o valor do novo salário.
+
+RESPOSTA
+
+var salario = prompt('Digite o valor do salário');
+var percentual = prompt('Informe o percentual de aumento');
+var aumento = ((parseInt(salario) / 100) * parseInt(percentual));
+var novoSalario = parseInt(salario) + aumento
+
+alert('O valor no novo salário é: ' + novoSalario)
+----------------------------------------------------------------
+
+4- Dada as seguintes entradas: quilometragem inicial, quilometragem final, litros consumidos,
+preço do litro de combustível. Faça um programa que imprima o seguinte Relatório: distância
+percorrida, Valor total gasto e o consumo do carro (quantos quilômetros percorre com 1 litro
+de combustível).
+
+RESPOSTA
+
+var kmInicial = prompt('informe a quilometragem inicial');
+var kmFinal = prompt('informe a quilomentragem final');
+var litrosConsumidos = prompt('informe a quantidade de Litros Consumidos');
+var valorCombustivel = prompt('informe o preço do combustivel');
+var distanciaPercorrida = (parseInt(kmFinal) - parseInt(kmInicial));
+var consumoMedio = distanciaPercorrida / parseInt(litrosConsumidos);
+var valorGasto = parseInt(valorCombustivel) * parseInt(litrosConsumidos);
+
+alert(' Distância Percorrida: ' + distanciaPercorrida + 'KM Valor total Gasto: R$' + valorGasto + ' Consumo Médio: ' + consumoMedio + 'K/L');
+----------------------------------------------------------------
+
+5- Faça um programa que leia o nome do usuário, a idade do usuário, o nome da mãe do usuário,
+a idade da mãe do usuário, o nome do pai do usuário e a idade do pai do usuário. O programa
+devera imprimir na tela quantos anos a mãe e o pai do usuário tinha quando ele nasceu. A
+resposta deve ter o formato deste exemplo:
+“Carlos, quando você nasceu, Dona Cecilia tinha 27 anos e Seu Paulo tinha 32 anos”.
+
+RESPOSTA
+
+var nome = prompt('Digite seu nome');
+var idade = prompt('Digite sua Idade');
+var nomeMae = prompt('Digite o nome de sua Mãe');
+var idadeMae = prompt('Digite a idade de sua Mãe');
+var nomePai = prompt('Digite o nome de seu Pai');
+var idadePai = prompt('Digite a idade de seu Pai');
+var idadeMaeNasc = parseInt(idadeMae) - parseInt(idade);
+var idadePaiNasc = parseInt(idadePai) - parseInt(idade);
+
+alert(nome + ' quando você nasceu, Dona ' + nomeMae + ' tinha ' + idadeMaeNasc + ' anos e seu ' + nomePai + ' Tinha ' + idadePaiNasc + ' anos');
+
+-------------------------------------------------------------
