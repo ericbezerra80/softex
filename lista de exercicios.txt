@@ -54,7 +54,7 @@ var distanciaPercorrida = (parseInt(kmFinal) - parseInt(kmInicial));
 var consumoMedio = distanciaPercorrida / parseInt(litrosConsumidos);
 var valorGasto = parseInt(valorCombustivel) * parseInt(litrosConsumidos);
 
-alert(' Distância Percorrida: ' + distanciaPercorrida + 'KM Valor total Gasto: R$' + valorGasto + ' Consumo Médio: ' + consumoMedio + 'K/L');
+document.write (' Distância Percorrida: ' + distanciaPercorrida + '<br>' + 'KM Valor total Gasto: R$' + valorGasto + '<br>' + 'Consumo Médio: ' + consumoMedio + 'K/L');
 ----------------------------------------------------------------
 
 5- Faça um programa que leia o nome do usuário, a idade do usuário, o nome da mãe do usuário,
@@ -74,7 +74,7 @@ var idadePai = prompt('Digite a idade de seu Pai');
 var idadeMaeNasc = parseInt(idadeMae) - parseInt(idade);
 var idadePaiNasc = parseInt(idadePai) - parseInt(idade);
 
-alert(nome + ' quando você nasceu, Dona ' + nomeMae + ' tinha ' + idadeMaeNasc + ' anos e seu ' + nomePai + ' Tinha ' + idadePaiNasc + ' anos');
+document.write( nome + ' quando você nasceu, Dona ' + nomeMae + ' tinha ' + idadeMaeNasc + ' anos e seu ' + nomePai + ' Tinha ' + idadePaiNasc + ' anos');
 -------------------------------------------------------------
 
 6- Faça um programa que leia as três notas do aluno e calcula a sua média e a sua situação
@@ -91,3 +91,74 @@ do aluno depende da sua média e é apresentada na tabela abaixo:
 |------------------------------------------|
 |REPROVADO DIRETO    | MÁDIA < 3.0         |
 --------------------------------------------
+
+var nota1 = parseFloat(prompt("Insira a nota 1 do aluno: "))
+var nota2 = parseFloat(prompt("Insira a nota 2 do aluno: "))
+var nota3 = parseFloat(prompt("Insira a nota 3 do aluno: "))
+var mediaAluno; 
+
+//LÓGICA QUE DESCOBRE QUAL A MENOR NOTA E CALCULA A MEDIA;
+var menorNota = nota1; //Aqui fazemos a variável menorNota receber NOTA1;
+
+if(menorNota > nota2){
+    menorNota = nota2;
+}
+
+if(menorNota > nota3){
+    menorNota = nota3;
+}
+
+mediaAluno = (nota1 + nota2 + nota3 - menorNota) / 2;
+
+//LÓGICA QUE CLASSIFICA O ALUNO DE ACORDO COM A MÉDIA.
+if(mediaAluno < 3 ){
+    alert("Reprovado direto")
+} else if(mediaAluno > 3 && mediaAluno < 7){
+    alert("Prova Final")
+} else {
+    alert("Aprovado direto")
+}
+-------------------------------------------------------------------
+a) Uma organização resolveu dar um aumento de salário aos seus colaboradores e lhe
+contratam para desenvolver o programa que calculará os reajustes. Faça um programa
+que recebe o salário de um colaborador e o reajuste segundo o seguinte critério,
+baseado no salário atual:
+Salários até R$ 280,00 (incluindo): aumento de 20%
+Salários entre R$ 280,00 e R$ 700,00: aumento de 15%
+Salários entre R$ 700,00 e R$ 1500,00: aumento de 10%
+Salários de R$ 1500,00 em diante: aumento de 5% Após o aumento ser realizado, informe na
+tela:
+O percentual de aumento aplicado;
+O valor do aumento;
+O novo salário, após o aumento.
+
+
+var salario = parseFloat(prompt("Entre com o salário do colaborador: "))
+var percentualAplicado;
+var valorAumento;
+var novoSalario;
+
+if(salario <= 280){
+    percentualAplicado = 20;
+    valorAumento = (salario * 0.2) 
+    novoSalario = salario + valorAumento;
+
+} else if(salario > 280.00 && salario < 700){
+    percentualAplicado = 15;
+    valorAumento = (salario * percentualAplicado) / 100;
+    novoSalario = salario + valorAumento;
+
+} else if (salario >= 700 && salario < 1500){
+
+    percentualAplicado = 10;
+    valorAumento = (salario * percentualAplicado) / 100;
+    novoSalario = salario + valorAumento;
+
+} else if(salario >= 1500){
+
+    percentualAplicado = 5;
+    valorAumento = (salario * percentualAplicado) / 100;
+    novoSalario = salario + valorAumento;
+}
+
+document.write ("Percentual aplicado " + percentualAplicado + '%' + "<br>" + "Valor do Aumento: R$ " + valorAumento + "<br>" + "Salário Atual com aumento R$ " + novoSalario);
