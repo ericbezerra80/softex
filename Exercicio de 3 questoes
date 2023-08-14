@@ -16,7 +16,7 @@ var soma = 0
         if (i%2 !=0){
             console.log(i)
             document.write(i)
-            document.write('<br>')
+            document.write('<hr>')
         }
     }
 
