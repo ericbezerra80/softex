@@ -20,4 +20,15 @@ var soma = 0
         }
     }
 
+   // CALCULAR A PORCENTAGEM DE UM NUMERO
+    function resultado (num, porcentagem){
+        let calculo = (num * porcentagem) / 100
+        console.log (calculo)
+        document.write ('O resultado é: ' + calculo)
+
+    }
+    let num = parseFloat(prompt('Digite o numero:'))
+    let porcentagem = parseFloat(prompt('Digite a Porcentagem que deseja:'))
+
+    resultado(num, porcentagem)
 
