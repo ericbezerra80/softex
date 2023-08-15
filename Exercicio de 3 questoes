@@ -25,8 +25,8 @@ var soma = 0
         let calculo = (num * porcentagem) / 100
         console.log (calculo)
         document.write ('O resultado é: ' + calculo)
-
     }
+
     let num = parseFloat(prompt('Digite o numero:'))
     let porcentagem = parseFloat(prompt('Digite a Porcentagem que deseja:'))
 
