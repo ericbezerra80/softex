@@ -1,0 +1,73 @@
+// function retornarNumeroPositivo(array){
+//   var valores = []
+
+//   for (var i = 0; i < array.length; i++){
+//     var elementos = array[i]
+//     if (elementos >=0){
+//       valores.push(elementos)
+//     }
+
+//   }
+// return valores
+// }
+
+
+// var array = [10, 15, -2, -5, 0, 110, 100, 1350, -80, -500]
+// var valores = retornarNumeroPositivo(array)
+
+// console.log(valores)
+// Questao 1
+// var num1 = 2
+// var num2 = 5
+// var num3 = 6
+// var num4 = 8
+// var num5 = 9
+
+// var soma = (num1 + num2 + num3 + num4 + num5)
+
+// console.log (soma)
+
+// Questao 2
+
+// var valor1 = Number(prompt('Digite o primeiro valor'))
+// var valor2 = Number(prompt('Digite o Segundo valor'))
+// var valor3 = Number(prompt('Digite o Terceiro valor'))
+// var valor4 = Number(prompt('Digite o Quarto valor'))
+
+// var media = (valor1 + valor2 + valor3 + valor4) /4
+
+// document.write('Resultado da média dos valores informados: ' + media)
+
+// Questao 3
+var valor1 = Number(prompt('Digite o primeiro valor'))
+var valor2 = Number(prompt('Digite o Segundo valor'))
+var valor3 = Number(prompt('Digite o Terceiro valor'))
+var maior = valor1
+
+if (valor2 > valor1 && valor2 > valor3){
+  var maior = valor2
+  if(valor3 > valor1 && valor3 > valor2){
+    var maior = valor3
+  }
+}
+    var menor = valor1
+    if(valor2 < valor3 && valor2 < valor1){
+      var menor = valor2
+      if(valor3 < valor2 && valor3 < valor1){
+        var menor = valor3
+      }
+    }
+  
+  
+
+alert('O maior valor informado foi: ' + maior + ' O menor valor Informado foi: ' + menor)
+
+
+// Questao 4
+// var idade = Number(prompt('Informe sua idade'))
+
+// if (idade < 15 || idade >70){
+//   alert('Você não pode doar sangue:')
+// }else{
+//   alert('Você pode Doar sangue:' )
+// }
