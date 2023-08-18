@@ -31,4 +31,22 @@ var soma = 0
     let porcentagem = parseFloat(prompt('Digite a Porcentagem que deseja:'))
 
     resultado(num, porcentagem)
+Aula 11
+let nota1 = parseFloat(prompt('Digite o primeiro nota'))
+let nota2 = parseFloat(prompt('Digite o segunda nota'))
+let nota3 = parseFloat(prompt('Digite o terceira nota'))
+let nota4 = parseFloat(prompt('Digite o quarta nota'))
+let diasAulas = parseInt(prompt('Informe a quantidade de aulas'))
+let faltas = parseInt(prompt('Informe o Numero de faltas'))
+let percentual = (faltas / diasAulas) * 100
+var media = (nota1 + nota2 + nota3 + nota4)/ 4
 
+if (media >=7 && media <=10 && percentual <=20){
+    document.write('Aluno Aprovado')
+}else if (media >=3 && media <7 && percentual <=20){
+    document.write('Aluno em Recuperação')
+}else if (percentual >20 || media <3){
+    document.write('Aluno Reprovado')
+}else{
+    document.write('Valor Inválido')
+}
