@@ -1,0 +1,51 @@
+class ContaBancaria{
+
+    constructor(){
+        this.agencia = '123-4'
+        this.numeroConta = '12345-6'
+        this.saldo = 200
+        this.limite = 500
+        
+    }
+
+    depositar(valorDeposito){
+        this.saldo += valorDeposito
+    }
+
+    sacar(valorSaque){
+        this.saldo -= valorSaque
+    }
+
+    verificarSaldo(){
+        return this.saldo
+    }
+
+    fazerEmprestimo(valorEmprestimo){
+        this.saldo += valorEmprestimo
+    }
+
+    verificarLimite(){
+        return this.limite
+    }
+
+}
+
+let conta1 = new ContaBancaria()
+let conta2 = new ContaBancaria()
+
+conta1.verificarSaldo()
+console.log(conta1.verificarSaldo())
+
+// console.log(conta1)
+
+
+conta1.depositar(500)
+console.log(conta1.verificarSaldo())
+
+conta1.sacar(200)
+console.log('Seu saldo atual é: ' + conta1.verificarSaldo())
+
+conta1.fazerEmprestimo(500)
+console.log('Seu saldo Atual é: ' + conta1.verificarSaldo())
+console.log('Seu limite Atual é: ' + conta1.verificarLimite())
+// console.log('Seu saldo atual é: ' + conta2.verificarSaldo())
