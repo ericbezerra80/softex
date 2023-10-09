@@ -1,0 +1,56 @@
+// Função tradicional sem parâmetros
+function exibirMenu() {
+    console.log("Selecione uma operação:");
+    console.log("1. Soma");
+    console.log("2. Subtração");
+    console.log("3. Multiplicação");
+    console.log("4. Divisão");
+  }
+  
+  // Função tradicional com parâmetros e retorno devalor
+  function calcular(operacao, num1, num2) {
+    let resultado;
+  
+    if (operacao === 1) {
+      resultado = num1 + num2;
+    } else if (operacao === 2) {
+      resultado = num1 - num2;
+    } else if (operacao === 3) {
+      resultado = num1 * num2;
+    } else if (operacao === 4) {
+      resultado = num1 / num2;
+    } else {
+      resultado = "Operação inválida";
+    }
+  
+    return resultado;
+  }
+  
+  // Arrow function com parâmetros e retorno de valor
+  const calcularPorcentagem = (num, porcentagem) => num * (porcentagem / 100);
+  // Exibir o menu para o usuário
+  exibirMenu();
+  
+  // Solicitar a operação ao usuário
+  const operacao = parseInt(prompt("Selecione uma operação: 1 = +, 2 = -, 3 = x, 4 = /"));
+  
+  // Solicitar os números ao usuário
+  const num1 = parseFloat(prompt("Digite o primeiro número:"));
+  const num2 = parseFloat(prompt("Digite o segundo número:"));
+  
+  // Realizar o cálculo com base na operação escolhida
+  const resultado = calcular(operacao, num1, num2);
+  
+  // Exibir o resultado
+  console.log("O resultado do cálculo é:", resultado);
+  
+  // Solicitar um número e uma porcentagem ao usuário
+  const num = parseFloat(prompt("Digite um número:"));
+  const porcentagem = parseFloat(prompt("Digite uma porcentagem:"));
+  
+  // Calcular a porcentagem utilizando a arrow function
+  const resultadoPorcentagem = calcularPorcentagem(num, porcentagem);
+  
+  // Exibir o resultado da porcentagem
+  console.log("O resultado da porcentagem é:", resultadoPorcentagem);
+  
