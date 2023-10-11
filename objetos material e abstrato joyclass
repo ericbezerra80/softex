@@ -1,0 +1,28 @@
+Exemplo de objetos materiais:
+Caneta
+Atributos: cor, marca, tamanho
+Métodos: escrever(), trocarCor(), aumentarTamanho()
+Carro
+Atributos: cor, modelo, velocidade
+Métodos: acelerar(), frear(), ligar()
+Exemplo de objetos abstratos:
+
+Pessoa
+Atributos: nome, idade, altura
+Métodos: cumprimentar(), comer(), dormir()
+Cálculo Matemático
+Atributos: número1, número2, resultado
+Métodos: somar(), subtrair(), multiplicar()
+Agora, vou demonstrar um exemplo desses objetos em JavaScript:
+
+`javascript // Objeto Caneta const caneta = { cor: 'azul', marca: 'BIC', tamanho: 'médio', escrever() { console.log('Escrevendo...'); }, trocarCor(novaCor) { this.cor = novaCor; console.log('Cor da caneta alterada para ' + novaCor); }, aumentarTamanho(novoTamanho) { this.tamanho = novoTamanho; console.log('Tamanho da caneta alterado para ' + novoTamanho); } };
+
+console.log(caneta.cor); // saída: azul caneta.escrever(); // saída: Escrevendo... caneta.trocarCor('vermelha'); // saída: Cor da caneta alterada para vermelha console.log(caneta.tamanho); // saída: médio
+
+// Objeto Pessoa const pessoa = { nome: 'João', idade: 25, altura: 1.8, cumprimentar() { console.log('Olá!'); }, comer() { console.log('Comendo...'); }, dormir() { console.log('Dormindo...'); } };
+
+console.log(pessoa.nome); // saída: João pessoa.cumprimentar(); // saída: Olá! pessoa.comer(); // saída: Comendo...
+
+// Objeto Cálculo Matemático const calculo = { número1: 5, número2: 3, resultado: null, somar() { this.resultado = this.número1 + this.número2; console.log('Resultado da soma: ' + this.resultado); }, subtrair() { this.resultado = this.número1 - this.número2; console.log('Resultado da subtração: ' + this.resultado); }, multiplicar() { this.resultado = this.número1 * this.número2; console.log('Resultado da multiplicação: ' + this.resultado); } };
+
+calculo.somar(); // saída: Resultado da soma: 8 calculo.subtrair(); // saída: Resultado da subtração: 2 console.log(calculo.resultado); // saída: 2 `
