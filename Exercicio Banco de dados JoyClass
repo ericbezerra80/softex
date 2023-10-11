@@ -1,0 +1,25 @@
+cópia de
+const mysql = require('mysql');
+
+// Configurações de conexão com o banco de dados
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'yourUsername',
+  password: 'yourPassword',
+  database: 'yourDatabaseName'
+});
+
+// Função para estabelecer a conexão
+const connectToDatabase = () => {
+  connection.connect((error) => {
+    if (error) {
+      console.error('Erro ao conectar ao banco de dados:', error);
+      return;
+    }
+    console.log('Conexão bem-sucedida com o banco de dados!');
+    // Outras tarefas que você deseja realizar após a conexão bem-sucedida
+  });
+};
+
+// Chamada da função de conexão
+connectToDatabase();
