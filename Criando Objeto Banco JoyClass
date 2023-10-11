@@ -1,0 +1,30 @@
+let banco = {
+  conta: "123456789",
+  saldo: 1000,
+  tipoDeConta: "Corrente",
+  agencia: "001",
+  
+  buscarSaldo: function() {
+    return this.saldo;
+  },
+  
+  deposito: function(valor) {
+    this.saldo += valor;
+  },
+  
+  saque: function(valor) {
+    this.saldo -= valor;
+  },
+  
+  numeroConta: function() {
+    return this.conta;
+  }
+};
+
+// Exemplo de uso dos métodos e propriedades:
+console.log(banco.buscarSaldo()); // Output: 1000
+banco.deposito(500);
+console.log(banco.buscarSaldo()); // Output: 1500
+banco.saque(200);
+console.log(banco.buscarSaldo()); // Output: 1300
+console.log(banco.numeroConta()); // Output: 123456789
