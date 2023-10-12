@@ -1,0 +1,106 @@
+// Interface comum para os produtos
+interface Computador {
+    String getRAM();
+    String getHDD();
+    String getCPU();
+    String getType();
+}
+
+// Implementações da interface para os tipos de computador
+class PC implements Computador {
+    private String ram;
+    private String hdd;
+    private String cpu;
+
+    public PC(String ram, String hdd, String cpu) {
+        this.ram = ram;
+        this.hdd = hdd;
+        this.cpu = cpu;
+    }
+
+    @Override
+    public String getRAM() {
+        return this.ram;
+    }
+
+    @Override
+    public String getHDD() {
+        return this.hdd;
+    }
+
+    @Override
+    public String getCPU() {
+        return this.cpu;
+    }
+
+    @Override
+    public String getType() {
+        return "PC";
+    }
+
+    @Override
+    public String toString() {
+        return "Tipo: " + this.getType() + ", RAM: " + this.getRAM() + ", HDD: " + this.getHDD() + ", CPU: " + this.getCPU();
+    }
+}
+
+class Server implements Computador {
+    private String ram;
+    private String hdd;
+    private String cpu;
+
+    public Server(String ram, String hdd, String cpu) {
+        this.ram = ram;
+        this.hdd = hdd;
+        this.cpu = cpu;
+    }
+
+    @Override
+    public String getRAM() {
+        return this.ram;
+    }
+
+    @Override
+    public String getHDD() {
+        return this.hdd;
+    }
+
+    @Override
+    public String getCPU() {
+        return this.cpu;
+    }
+
+    @Override
+    public String getType() {
+        return "Server";
+    }
+
+    @Override
+    public String toString() {
+        return "Tipo: " + this.getType() + ", RAM: " + this.getRAM() + ", HDD: " + this.getHDD() + ", CPU: " + this.getCPU();
+    }
+}
+
+// Fábrica de computadores
+class ComputadorFactory {
+    public static Computador createComputador(String type, String ram, String hdd, String cpu) {
+        if (type.equalsIgnoreCase("PC")) {
+            return new PC(ram, hdd, cpu);
+        } else if (type.equalsIgnoreCase("Server")) {
+            return new Server(ram, hdd, cpu);
+        } else {
+            throw new IllegalArgumentException("Tipo de computador inválido.");
+        }
+    }
+}
+
+// Exemplo de uso
+public class Main {
+    public static void main(String[] args) {
+        Computador pc = ComputadorFactory.createComputador("PC", "8GB", "1TB", "2.4GHz");
+        System.out.println(pc); // Output: Tipo: PC, RAM: 8GB, HDD: 1TB, CPU: 2.4GHz
+
+        Computador server = ComputadorFactory.createComputador("Server", "16GB", "2TB", "3.0GHz");
+        System.out.println(server); // Output: Tipo: Server, RAM: 16GB, HDD: 2TB, CPU: 3.0GHz
+    }
+}
