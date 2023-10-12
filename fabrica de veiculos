@@ -1,0 +1,72 @@
+copied
+// Classe abstrata Veículo
+class Veiculo {
+  constructor(modelo, marca, cor, numeroRodas) {
+    this.modelo = modelo;
+    this.marca = marca;
+    this.cor = cor;
+    this.numeroRodas = numeroRodas;
+  }
+
+  Clone() {
+    return new Veiculo(this.modelo, this.marca, this.cor, this.numeroRodas);
+  }
+
+  Represent() {
+    console.log(`Modelo: ${this.modelo}, Marca: ${this.marca}, Cor: ${this.cor}, Número de Rodas: ${this.numeroRodas}`);
+  }
+}
+
+// Subclasse Carro
+class Carro extends Veiculo {
+  constructor(modelo, marca, cor, numeroRodas, numeroPortas) {
+    super(modelo, marca, cor, numeroRodas);
+    this.numeroPortas = numeroPortas;
+  }
+
+  Clone() {
+    return new Carro(this.modelo, this.marca, this.cor, this.numeroRodas, this.numeroPortas);
+  }
+
+  Represent() {
+    console.log(`Modelo: ${this.modelo}, Marca: ${this.marca}, Cor: ${this.cor}, Número de Rodas: ${this.numeroRodas}, Número de Portas: ${this.numeroPortas}`);
+  }
+}
+
+// Subclasse Moto
+class Moto extends Veiculo {
+  constructor(modelo, marca, cor, numeroRodas, cilindradas) {
+    super(modelo, marca, cor, numeroRodas);
+    this.cilindradas = cilindradas;
+  }
+
+  Clone() {
+    return new Moto(this.modelo, this.marca, this.cor, this.numeroRodas, this.cilindradas);
+  }
+
+  Represent() {
+    console.log(`Modelo: ${this.modelo}, Marca: ${this.marca}, Cor: ${this.cor}, Número de Rodas: ${this.numeroRodas}, Cilindradas: ${this.cilindradas}`);
+  }
+}
+
+// Classe Aplicação
+class Aplicacao {
+  static CriarArrayDeClones() {
+    const veiculos = [];
+    const carro1 = new Carro("Fiesta", "Ford", "Vermelho", 4, 4);
+    const carro2 = new Carro("Onix", "Chevrolet", "Preto", 4, 4);
+    const moto1 = new Moto("CBR500R", "Honda", "Azul", 2, 500);
+    const moto2 = new Moto("MT-07", "Yamaha", "Cinza", 2, 700);
+    veiculos.push(carro1.Clone());
+    veiculos.push(carro2.Clone());
+    veiculos.push(moto1.Clone());
+    veiculos.push(moto2.Clone());
+    veiculos.push(carro1.Clone());
+    veiculos.push(moto2.Clone());
+    return veiculos;
+  }
+}
+
+// Teste
+const veiculosClones = Aplicacao.CriarArrayDeClones();
+veiculosClones.forEach((veiculo) => veiculo.Represent());
