@@ -1,0 +1,15 @@
+try {
+  let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+  let numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+  if (isNaN(numero1) || isNaN(numero2)) {
+    throw new Error("Um dos valores digitados não é um número válido.");
+  }
+
+  let resultado = numero1 / numero2;
+  console.log("O resultado da divisão é: " + resultado);
+} catch (error) {
+  console.log("Ocorreu um erro: " + error.message);
+} finally {
+  console.log("Fim da execução do programa.");
+}
