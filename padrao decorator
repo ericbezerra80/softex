@@ -1,0 +1,50 @@
+class Sanduiche:
+    def getDescricao(self):
+        pass
+    
+    def getCusto(self):
+        pass
+
+
+class FrangoAssado(Sanduiche):
+    def getDescricao(self):
+        return "Frango assado"
+    
+    def getCusto(self):
+        return 4.50
+
+
+class IngredienteAdicional(Sanduiche):
+    def __init__(self, sanduiche):
+        self.sanduiche = sanduiche
+    
+    def getDescricao(self):
+        pass
+    
+    def getCusto(self):
+        pass
+
+
+class Pepperoni(IngredienteAdicional):
+    def getDescricao(self):
+        return self.sanduiche.getDescricao() + ", pepperoni"
+    
+    def getCusto(self):
+        return self.sanduiche.getCusto() + 0.99
+
+
+class QueijoMussarelaRalado(IngredienteAdicional):
+    def getDescricao(self):
+        return self.sanduiche.getDescricao() + ", queijo mussarela ralado"
+    
+    def getCusto(self):
+        return self.sanduiche.getCusto() + 2.00
+
+
+# Utilização do decorator para criar o sanduíche desejado
+
+sanduiche = FrangoAssado()
+sanduiche = Pepperoni(sanduiche)
+sanduiche = QueijoMussarelaRalado(sanduiche)
+
+print(f'{sanduiche.getDescricao()} custa ${sanduiche.getCusto()}')
