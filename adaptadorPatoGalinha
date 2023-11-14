@@ -1,0 +1,36 @@
+// Classe Pato
+class Pato {
+  voar() {
+    console.log("Pato voando");
+  }
+}
+
+// Classe Galinha
+class Galinha {
+  voar() {
+    console.log("Galinha voando");
+  }
+}
+
+// Classe AdaptadorPato
+class AdaptadorPato {
+  constructor(pato) {
+    this.pato = pato;
+  }
+  
+  voar() {
+    this.pato.voar();
+  }
+}
+
+// Classe AdaptadorPatoDemo
+class AdaptadorPatoDemo {
+  static run() {
+    const pato = new Pato();
+    const adaptadorPato = new AdaptadorPato(pato);
+    
+    adaptadorPato.voar(); // O objeto adaptadorPato é usado como se fosse um objeto Galinha
+  }
+}
+
+AdaptadorPatoDemo.run();
