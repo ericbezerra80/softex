@@ -1,0 +1,87 @@
+// Classe Editor
+class Editor {
+  constructor() {
+    this.observers = [];
+  }
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+  removeObserver(observer) {
+    const index = this.observers.indexOf(observer);
+    if (index !== -1) {
+      this.observers.splice(index, 1);
+    }
+  }
+  notify(event) {
+    this.observers.forEach(observer => {
+      observer.update(event);
+    });
+  }
+}
+
+// Subclasse TextEditor da classe Editor
+class TextEditor extends Editor {
+  constructor() {
+    super();
+    this.lines = [];
+  }
+  insertLine(lineNumber, text) {
+    this.lines.splice(lineNumber, 0, text);
+    this.lines = this.lines.filter(line => line !== "EOF"); // Remover a linha EOF
+  }
+  open() {
+    this.notify("open");
+  }
+  save() {
+    this.notify("save");
+  }
+}
+
+// Classe ConsoleObserver que implementa o Observer
+class ConsoleObserver {
+  constructor(textEditor) {
+    this.textEditor = textEditor;
+    this.lines = [];
+    this.textEditor.addObserver(this);
+  }
+  update(event) {
+    if (event === "open") {
+      console.log("Texto do editor aberto");
+    } else if (event === "save") {
+      console.log("Conteúdo salvo:");
+      this.lines.forEach(line => {
+        console.log(line);
+      });
+    }
+  }
+  insertText(text) {
+    if (text !== "EOF") {
+      this.lines.push(text);
+    } else {
+      this.textEditor.removeObserver(this);
+      this.textEditor.save();
+    }
+  }
+}
+
+// Instanciar um TextEditor
+const textEditor = new TextEditor();
+
+// Disparar o evento "open"
+textEditor.open();
+
+// Receber as linhas de texto do usuário até "EOF"
+const userInput = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+console.log("Digite as linhas de texto ('EOF' para finalizar):");
+userInput.on("line", line => {
+  textEditor.insertLine(textEditor.lines.length, line);
+});
+
+// Instanciar um ConsoleObserver e receber as inserções de texto
+const consoleObserver = new ConsoleObserver(textEditor);
+userInput.on("line", line => {
+  consoleObserver.insertText(line);
+});
