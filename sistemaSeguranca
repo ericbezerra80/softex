@@ -1,0 +1,27 @@
+class SistemaSeguranca {
+  private static instance: SistemaSeguranca;
+
+  private constructor() {}
+
+  static getInstance(): SistemaSeguranca {
+    if (!SistemaSeguranca.instance) {
+      SistemaSeguranca.instance = new SistemaSeguranca();
+    }
+    return SistemaSeguranca.instance;
+  }
+
+  acessaBaseSecreta(senha: string): void {
+    const senhaBaseSecreta = "senhasecreta";
+    if (senha === senhaBaseSecreta) {
+      console.log("Acesso concedido à base secreta.");
+    } else {
+      console.log("Acesso negado à base secreta.");
+    }
+  }
+}
+
+// Programa principal
+const sistemaSeguranca = SistemaSeguranca.getInstance();
+sistemaSeguranca.acessaBaseSecreta("senhaincorreta"); // Acesso negado à base secreta.
+
+sistemaSeguranca.acessaBaseSecreta("senhasecreta"); // Acesso concedido à base secreta.
