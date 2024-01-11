@@ -1,0 +1,33 @@
+-- Criação do banco de dados
+CREATE DATABASE BlogDB;
+
+-- Seleção do banco de dados
+USE BlogDB;
+
+-- Criação da tabela Autor
+CREATE TABLE Autor (
+    AutorID INT PRIMARY KEY,
+    NomeDoAutor VARCHAR(255),
+    Email VARCHAR(255)
+);
+
+-- Criação da tabela Post
+CREATE TABLE Post (
+    PostID INT PRIMARY KEY,
+    Titulo VARCHAR(255),
+    Conteudo TEXT,
+    DataDePublicacao DATE,
+    AutorID INT,
+    FOREIGN KEY (AutorID) REFERENCES Autor(AutorID)
+);
+
+-- Criação da tabela Comentario
+CREATE TABLE Comentario (
+    ComentarioID INT PRIMARY KEY,
+    TextoDoComentario TEXT,
+    DataDoComentario DATE,
+    AutorID INT,
+    PostID INT,
+    FOREIGN KEY (AutorID) REFERENCES Autor(AutorID),
+    FOREIGN KEY (PostID) REFERENCES Post(PostID)
+);
