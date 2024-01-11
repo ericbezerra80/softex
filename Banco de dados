@@ -1,0 +1,28 @@
+Inserção de produtos na tabela "Produtos":
+sql
+Copy code
+-- Inserção de produtos na tabela "Produtos"
+INSERT INTO Produtos (NomeDoProduto, Preco, QuantidadeEmEstoque)
+VALUES 
+    ('Smartphone', 799.99, 20),
+    ('Tablet', 349.99, 10),
+    ('Fone de Ouvido', 49.99, 50);
+Atualização de estoque e preço do "Smartphone":
+sql
+Copy code
+-- Atualização de estoque e preço do "Smartphone"
+UPDATE Produtos
+SET QuantidadeEmEstoque = 25, Preco = 849.99
+WHERE NomeDoProduto = 'Smartphone';
+Venda de produtos e atualização de estoque:
+sql
+Copy code
+-- Simulação de venda de cinco unidades do "Tablet"
+UPDATE Produtos
+SET QuantidadeEmEstoque = QuantidadeEmEstoque - 5
+WHERE NomeDoProduto = 'Tablet';
+
+-- Simulação de venda de dez unidades do "Fone de Ouvido"
+UPDATE Produtos
+SET QuantidadeEmEstoque = QuantidadeEmEstoque - 10
+WHERE NomeDoProduto = 'Fone de Ouvido';
