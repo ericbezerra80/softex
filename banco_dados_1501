@@ -1,0 +1,26 @@
+Seleção de dados:
+SELECT * FROM transacoes;
+
+Renomeando colunas:
+SELECT ID_Transacao, Data AS Data_Transacao, Valor FROM transacoes;
+
+Filtragem com a cláusula WHERE:
+SELECT * FROM transacoes WHERE Valor > 100.00;
+
+Ordenação com a cláusula ORDER BY:
+SELECT * FROM transacoes ORDER BY Valor DESC;
+
+Agregação com funções SQL:
+a) Média dos valores das transações: SELECT AVG(Valor) FROM transacoes;
+
+b) Valor máximo das transações: SELECT MAX(Valor) FROM transacoes;
+
+c) Valor mínimo das transações: SELECT MIN(Valor) FROM transacoes;
+
+d) Número total de transações: SELECT COUNT(*) FROM transacoes;
+
+Agrupamento com a cláusula GROUP BY:
+SELECT produto, AVG(Valor) FROM transacoes GROUP BY produto;
+
+Consulta combinada:
+SELECT categoria_produto, COUNT(*) AS Quantidade, SUM(Valor) AS Valor_Total, AVG(Valor) AS Media_Valor FROM transacoes GROUP BY categoria_produto;
