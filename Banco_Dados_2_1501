@@ -1,0 +1,17 @@
+Inserção de dados: INSERT INTO Autores (Nome, Nacionalidade) VALUES ('Autor 1', 'Brasil'), ('Autor 2', 'Estados Unidos'), ('Autor 3', 'França');
+INSERT INTO Livros (Titulo, AnoPublicacao, AutorID) VALUES ('Livro 1', '2020', 1), ('Livro 2', '2018', 1), ('Livro 3', '2015', 2), ('Livro 4', '2019', 2), ('Livro 5', '2017', 3);
+
+Consulta simples: SELECT Autores.Nome, Livros.Titulo FROM Autores JOIN Livros ON Autores.AutorID = Livros.AutorID;
+Propósito: Essa consulta exibe todos os autores e seus livros associados.
+
+Consulta com junção INNER JOIN: SELECT Livros.Titulo, Livros.AnoPublicacao, Autores.Nome, Autores.Nacionalidade FROM Livros JOIN Autores ON Livros.AutorID = Autores.AutorID;
+Propósito: Essa consulta retorna os detalhes dos livros e seus autores correspondentes.
+
+Consulta com junção LEFT JOIN: SELECT Autores.Nome, Autores.Nacionalidade, Livros.Titulo, Livros.AnoPublicacao FROM Autores LEFT JOIN Livros ON Autores.AutorID = Livros.AutorID;
+Propósito: Essa consulta exibe todos os autores, independentemente de terem livros associados. Ela também inclui informações dos livros, se disponíveis.
+
+Consulta com filtro por nacionalidade: SELECT Autores.Nome, Livros.Titulo FROM Autores JOIN Livros ON Autores.AutorID = Livros.AutorID WHERE Autores.Nacionalidade = 'Brasil';
+Propósito: Essa consulta lista os autores e seus livros, restrito apenas aos autores de nacionalidade brasileira.
+
+Consulta agregada: SELECT Autores.Nome, COUNT(Livros.LivroID) AS TotalLivros FROM Autores LEFT JOIN Livros ON Autores.AutorID = Livros.AutorID GROUP BY Autores.Nome;
+Propósito: Essa consulta conta quantos livros cada autor escreveu, agregando os dados pelo nome do autor.
